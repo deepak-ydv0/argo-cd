@@ -1,0 +1,6 @@
+kind: Namespace
+metadata:
+  name: apache
+  labels:
+    app.kubernetes.io/name: apache
+    app.kubernetes.io/managed-by: argocd
