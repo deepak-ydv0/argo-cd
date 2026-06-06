@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: online-shop-app
+  namespace: default
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: online-shop-app
+  template:
+    metadata:
+      labels:
+        app: online-shop-app
+    spec:
+      containers:
+      - name: online-shop-app
+        image: amitabhdevops/online_shop:latest
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
